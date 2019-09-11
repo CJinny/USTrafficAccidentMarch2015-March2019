@@ -6,8 +6,8 @@ library(leaflet.extras)
 library(lubridate)
 library(htmltools)
 
-#setwd('Downloads/Rstudio_dir/shiny/TrafficAccidents/USTrafficAccidentMarch2015-March2019/')
-acd = fread('US_Accidents.csv', sep=',')
+acd = fread('./Data/US_Accidents.csv', sep=',')
+
 acd$Start_Time = as_datetime(acd$Start_Time)
 
 icons <- awesomeIcons(icon = "whatever",
