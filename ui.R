@@ -1,11 +1,14 @@
 library(shinydashboard)
 library(shiny)
-library(Hmisc)
-library(rsconnect)
 library(data.table)
+library(leaflet)
+library(leaflet.extras)
+library(lubridate)
+library(htmltools)
 
 
 acd = fread('US_Accidents.csv', sep=',')
+acd$Start_Time = as_datetime(acd$Start_Time)
 
 STATES = c("All", sort(as.vector(unique(acd$State))))
 WEATHERCOND = c("All", sort(as.vector(unique(acd$Weather_Condition))))

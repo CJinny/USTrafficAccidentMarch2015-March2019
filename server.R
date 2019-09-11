@@ -1,8 +1,14 @@
 library(shinydashboard)
 library(shiny)
-library(Hmisc)
-library(rsconnect)
+library(data.table)
+library(leaflet)
+library(leaflet.extras)
+library(lubridate)
+library(htmltools)
 
+#setwd('Downloads/Rstudio_dir/shiny/TrafficAccidents/USTrafficAccidentMarch2015-March2019/')
+acd = fread('US_Accidents.csv', sep=',')
+acd$Start_Time = as_datetime(acd$Start_Time)
 
 icons <- awesomeIcons(icon = "whatever",
                       iconColor = "black",
