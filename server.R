@@ -1,14 +1,13 @@
 library(shinydashboard)
 library(shiny)
-library(data.table)
+#library(data.table)
 library(leaflet)
 library(leaflet.extras)
 library(lubridate)
 library(htmltools)
 
-acd = fread('./Data/US_Accidents.csv', sep=',')
-
-acd$Start_Time = as_datetime(acd$Start_Time)
+#acd = fread('./Data/US_Accidents.csv', sep=',')
+#acd$Start_Time = as_datetime(acd$Start_Time)
 
 icons <- awesomeIcons(icon = "whatever",
                       iconColor = "black",
